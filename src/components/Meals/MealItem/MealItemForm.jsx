@@ -1,4 +1,5 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
+
 import Input from '../../UI/Input';
 import classes from './MealItemForm.module.css';
 
@@ -23,6 +24,7 @@ const MealItemForm = props => {
 
     props.onAddToCart(enteredAmountNumber);
   };
+
   return (
     <form className={classes.form} onSubmit={submitHandler}>
       <Input
@@ -36,7 +38,7 @@ const MealItemForm = props => {
           step: '1',
           defaultValue: '1',
         }}
-      ></Input>
+      />
       <button>+ Add</button>
       {!amountIsValid && <p>Please enter a valid amount (1-5).</p>}
     </form>
